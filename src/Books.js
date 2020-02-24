@@ -22,7 +22,7 @@ class Books extends Component {
             .then((data) => {
         
                 // Debugging
-                 console.log(JSON.stringify(data.body.items, null, 2));
+                // console.log(JSON.stringify(data.body.items, null, 2));
 
                 // Using the spread operator to spread all items into new array
                 this.setState({books: [...data.body.items]})

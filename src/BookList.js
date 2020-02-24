@@ -2,7 +2,10 @@ import React from 'react';
 import BookCard from './BookCard';
 // Really helpful video: https://www.youtube.com/watch?v=l7ANPZkiWBo
 const BookList = (props) => {
-    console.log(JSON.stringify(props, null, 2))
+    
+    // Debugging
+    // console.log(JSON.stringify(props, null, 2))
+
     return (
         <div className="list">
             {
