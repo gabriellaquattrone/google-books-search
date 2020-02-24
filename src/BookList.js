@@ -11,7 +11,9 @@ const BookList = (props) => {
                     // We need to pass all these props down to our BookCard component so we can render the info we want.
                     return <BookCard 
                                 key={index}
-                                image={book.volumeInfo.imageLinks.thumbnail}
+                                // The question marks are necessary, especially for imageLinks, because in some cases it is undefined.
+                                // ?. is called a null conditional operator. It will resolve with "Image Not Found" if imageLinks is not defined.
+                                image={book.volumeInfo.imageLinks?.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "src/imgs/notfound.gif" }
                                 title={book.volumeInfo.title}
                                 author={book.volumeInfo.authors}
                                 published={book.volumeInfo.publishedDate}

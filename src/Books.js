@@ -20,8 +20,9 @@ class Books extends Component {
             .get("https://www.googleapis.com/books/v1/volumes")
             .query({ q: this.state.searchField })
             .then((data) => {
+        
                 // Debugging
-                // console.log(data);
+                 console.log(JSON.stringify(data.body.items, null, 2));
 
                 // Using the spread operator to spread all items into new array
                 this.setState({books: [...data.body.items]})
